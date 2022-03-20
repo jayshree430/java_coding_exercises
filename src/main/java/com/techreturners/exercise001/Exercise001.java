@@ -45,16 +45,10 @@ public class Exercise001 {
 
     public int countLinuxUsers(List<User> users) {
 
-        int count =0;
-        /*
-        * Iterating through the list to check if type is "Linux". If yes then increase the counter.
-        * */
-        for (User u1 : users) {
-            if (u1.getType().equals("Linux")) {
-                count++;
-            }
-        }
-        return count;
+        long countLinuxUser = users.stream()
+                .filter(c -> c.getType().equals("Linux"))
+                .count();
+        return (int) countLinuxUser;
     }
 }
 
