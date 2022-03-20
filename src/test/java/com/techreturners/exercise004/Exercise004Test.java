@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
+import java.time.LocalTime;
 
 import static org.junit.Assert.assertEquals;
 
@@ -35,6 +36,15 @@ public class Exercise004Test {
 
         assertEquals(expected, ex004.getDateTime());
     }
+    @Test
+    public void checkGetDateTimeWhenBothDateAndTimeIsSpecifiedIndividually() {
 
+        LocalDate date = LocalDate.of(2021, 01, 24);
+        LocalTime time = LocalTime.of(23, 59);
+        Exercise004 ex004 = new Exercise004(LocalDateTime.of(date,time));
+        LocalDateTime expected = LocalDateTime.of(2052, Month.OCTOBER, 03, 1, 45, 40);
+
+        assertEquals(expected, ex004.getDateTime());
+    }
 
 }

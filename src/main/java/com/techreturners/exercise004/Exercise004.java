@@ -15,10 +15,6 @@ public class Exercise004 {
         this.localDateTime = dateTime;
     }
 
-    public Exercise004(LocalTime time) {
-        this.localDateTime = time.atDate(LocalDate.now());
-    }
-
     public LocalDateTime getDateTime() {
         return localDateTime.plusSeconds(GIGASECONDS);
     }
